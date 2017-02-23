@@ -72,5 +72,34 @@ public class TestLogin3 {
 					intLoginCount++;
 			}
 		} while (!loginSuccess);
+
+		if (!loginSuccess) {
+			System.out.println("1- Forgot Password");
+			System.out.println("2- Forgot User Id");
+			String strUserResponse = reader.nextLine();
+			switch (strUserResponse) {
+			case "1":
+				System.out.println("You want to reset your password");
+				//logic to reset password
+				//First ask for userid
+				//validate user id
+				//generate OTP
+				//validate otp
+				//ask to enter new password
+				//validate new password
+				//display - Password is set successfully. :)
+				break;
+			case "2":
+				System.out.println("You want to retrieve your user id");
+				//logic to retrieve user id - if user id is not a mobile number :)
+				//need to think how to add date of birth, security question
+				break;
+			default:
+				System.out.println("Wrong option is selected");
+				break;
+
+			}
+
+		}
 	}
 }
