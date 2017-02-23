@@ -7,7 +7,7 @@ public class OTP {
 
 	private String otp;
 	int minimum = 111111;
-	int maximum = 999999;
+	int maximum = 888888;
 	Random randomGenerator = new Random();
 
 	int randomOtp = randomGenerator.nextInt(999999);
@@ -23,12 +23,16 @@ public class OTP {
 	}
 
 	public String generateOTP() {
-		return String.valueOf(randomOtp);
+		// return String.valueOf(randomOtp);
+		return String.format("%06d", randomOtp);
 	}
 
 	public String generateOTPNew() {
 		int randomOtp = minimum + (int) (Math.random() * maximum);
-		return String.valueOf(randomOtp);
+		
+		//int randomOtp=minimum+(int)(Math.random()* 888888);
+		//return String.valueOf(randomOtp);
+		return String.format("%06d", randomOtp);
 	}
 
 	public boolean isNumber(String otp) {
@@ -57,12 +61,14 @@ public class OTP {
 		// System.out.println(otpObj.isNumber("234123"));
 
 		Scanner reader = new Scanner(System.in);
-		System.out.println(otpObj.generateOTP());
-		System.out.print("Enter OTP: ");
-		String otp = reader.nextLine();
-		otpObj.setOtp(otp);
-		otpObj.validateOtp(otpObj.getOtp());
-		reader.close();
+		for(int i=0; i<=100;i++){
+			System.out.println(otpObj.generateOTPNew());
+		}
+//		System.out.print("Enter OTP: ");
+//		String otp = reader.nextLine();
+//		otpObj.setOtp(otp);
+//		otpObj.validateOtp(otpObj.getOtp());
+//		reader.close();
 
 	}
 }
